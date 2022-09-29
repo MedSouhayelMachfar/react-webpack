@@ -1,22 +1,14 @@
-import "./styles.css";
-import IMAGE from "./ecran.png";
-import { ClickCounter } from "./ClickCounter";
+import "./styles.scss";
+import IMAGE from "./assets/ecran.jpg";
+import { ClickCounter } from "./components/ClickCounter";
+import Title from "./components/Title";
 
-export const App = (props: { name: string }): JSX.Element => {
-  const array: string[] = [];
-
-  const myFunc = (): void => {
-    console.log("hello");
-    console.log(array);
-    console.log(props);
-  };
-
+export const App = (): JSX.Element => {
   return (
     <>
+      <Title />
       <h2>{process.env.NODE_ENV}</h2>
       <img src={IMAGE} alt="screenshot" />
-      <h1>React18 Typescript webpack</h1>
-      <button onClick={myFunc}></button>
       <ClickCounter />
     </>
   );

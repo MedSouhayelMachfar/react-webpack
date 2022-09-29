@@ -22,8 +22,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -43,7 +43,7 @@ module.exports = {
   // Web pack plugin that inject the bundle.js in the index.html file
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "..", "./src/index.html"),
+      template: path.resolve(__dirname, "..", "./public/index.html"),
     }),
     new CopyPlugin({
       patterns: [
